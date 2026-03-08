@@ -93,11 +93,11 @@ pip install -r requirements.txt
 
 ### 4. Set Up Your Gemini API Key
 
-Get a free API key at: https://aistudio.google.com/app/apikey
+Get a free API key at: https://https://console.groq.com/keys
 
 ```bash
 cp .env.example .env
-# Then edit .env and replace 'your_gemini_api_key_here' with your actual key
+# Then edit .env and replace 'your_grok_api_key_here' with your actual key
 ```
 
 ---
