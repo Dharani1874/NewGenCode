@@ -93,7 +93,7 @@ pip install -r requirements.txt
 
 ### 4. Set Up Your Gemini API Key
 
-Get a free API key at: https://https://console.groq.com/keys
+Get a free API key at: https://console.groq.com/keys
 
 ```bash
 cp .env.example .env
