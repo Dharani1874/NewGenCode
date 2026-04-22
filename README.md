@@ -1,8 +1,7 @@
 # NewGenCode 🔄
 ### AI-Driven Multi-Agent System for Legacy Code Modernization
 
-NewGenCode automatically modernizes legacy COBOL and FORTRAN code into clean Python (or Java) using a pipeline of three AI agents powered by Google Gemini.
-
+NewGenCode, a full-stack AI application that automates the modernization of legacy COBOL and FORTRAN codebases into Python 3, Java 17, C, or C++. The system is powered by a five-agent pipeline built on the Groq LLM API, where each agent handles a distinct stage of the migration process including code analysis, intermediate representation generation, translation, debugging, and documentation. Designed and implemented a FastAPI backend with a React frontend that features drag-and-drop file upload, real-time agent progress tracking
 ---
 
 ## Architecture
@@ -25,14 +24,14 @@ Legacy Code (.cbl / .f)
         ▼ (pseudocode / IR)
 ┌─────────────────────────┐
 │  Agent 3: Translator    │  → Converts pseudocode
-│  TranslationAgent       │  → Produces Python or Java code
+│  TranslationAgent       │  → Produces Python or Java or C or C++ code
 └─────────────────────────┘
         │
         ▼
-Modern Code (.py / .java)
+Modern Code (.py / .java / .c / .c++)
 ```
 
-Each agent uses Google Gemini via the free tier API.
+Each agent uses Groq  via the free tier API.
 
 ---
 
@@ -91,9 +90,9 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Set Up Your Gemini API Key
+### 4. Set Up Your Groq API Key
 
-Get a free API key at: https://aistudio.google.com/app/apikey
+
 
 ```bash
 cp .env.example .env
@@ -115,6 +114,8 @@ python main.py samples/payroll.cbl
 ```bash
 python main.py samples/payroll.cbl --target python
 python main.py samples/payroll.cbl --target java
+python main.py samples/payroll.cbl --target C
+python main.py samples/payroll.cbl --target C++
 ```
 
 ### Specify Output Directory
@@ -133,7 +134,7 @@ For each run, three files are generated in the output directory:
 |------|-------------|
 | `<name>_documentation.md` | Structured analysis: purpose, I/O, business logic |
 | `<name>_pseudocode.txt` | Language-agnostic intermediate representation (IR) |
-| `<name>_translated.py` | Final modern Python (or `.java`) code |
+| `<name>_translated.py` | Final modern (Python ,Java,C,C++) code |
 
 ---
 
@@ -149,21 +150,10 @@ For each run, three files are generated in the output directory:
 ## Tech Stack
 
 - **Language**: Python 3.10+
-- **LLM**: Google Gemini 1.5 Flash (free tier)
-- **Libraries**: `google-generativeai`, `python-dotenv`
+- **LLM**: Groq (free tier)
+- **Libraries**: `groq`, `python-dotenv`
 - **IDE**: VS Code (recommended)
 - **Version Control**: Git + GitHub
-
----
-
-## Base Papers
-
-| Paper | Focus |
-|-------|-------|
-| **VAPU** – Autonomous Legacy Code Modernization | Execution-based validation, modernization correctness |
-| **RepoTransAgent** – Multi-Agent LLM Framework | Role-based agent coordination for code translation |
-
-NewGenCode combines insights from both: multi-agent design from RepoTransAgent, preservation-focused logic from VAPU.
 
 ---
 
