@@ -1,7 +1,7 @@
-# NewGenCode 🔄
-### AI-Driven Multi-Agent System for Legacy Code Modernization
+# NewGenCode 
+###  Multi-Agent System for Legacy Code Modernization
 
-NewGenCode, a full-stack AI application that automates the modernization of legacy COBOL and FORTRAN codebases into Python 3, Java 17, C, or C++. The system is powered by a five-agent pipeline built on the Groq LLM API, where each agent handles a distinct stage of the migration process including code analysis, intermediate representation generation, translation, debugging, and documentation. Designed and implemented a FastAPI backend with a React frontend that features drag-and-drop file upload, real-time agent progress tracking
+NewGenCode, a full-stack application that automates the modernization of legacy COBOL and FORTRAN codebases into Python 3, Java 17, C, or C++. The system is powered by a five-agent pipeline built on the Groq LLM API, where each agent handles a distinct stage of the migration process including code analysis, intermediate representation generation, translation, debugging, and documentation. Designed and implemented a FastAPI backend with a React frontend that features drag-and-drop file upload, real-time agent progress tracking
 ---
 
 ## Architecture
@@ -157,14 +157,7 @@ For each run, three files are generated in the output directory:
 
 ---
 
-## Future Work (v2+)
 
-- Execution Agent: Run and validate translated code automatically
-- Debugging Agent: Fix runtime errors in generated code
-- Adversarial Agent: Test edge cases and verify equivalence
-- Java translation improvements
-- Web UI for non-developers
-- Batch processing for large codebases
 
 ---
 
